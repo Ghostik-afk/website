@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Юрий Ковальчук — начинающий Frontend Developer. Помогу с вёрсткой сайтов по макетам из Figma и не только.">
+  <meta name="author" content="Юрий Ковальчук">
+  <meta property="og:title" content="Юрий Ковальчук — Frontend Developer">
+  <meta property="og:description" content="Начинающий frontend-разработчик. Вёрстка по макетам из Figma и других источников.">
+  <meta property="og:type" content="website">
+  <title>Юрий — Frontend Developer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230d0d0d'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' fill='%23c8a97e' font-family='serif' font-size='14' font-weight='600'%3EYK%3C/text%3E%3C/svg%3E">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#hero" class="header__logo" data-i18n="logo">YK</a>
+
+      <nav class="header__nav" role="navigation" aria-label="Основная навигация">
+        <ul class="header__nav-list">
+          <li><a href="#about" class="header__nav-link" data-i18n="nav.about">Обо мне</a></li>
+          <li><a href="#skills" class="header__nav-link" data-i18n="nav.skills">Навыки</a></li>
+          <li><a href="#projects" class="header__nav-link" data-i18n="nav.projects">Проекты</a></li>
+          <li><a href="#experience" class="header__nav-link" data-i18n="nav.experience">Опыт</a></li>
+          <li><a href="#contact" class="header__nav-link" data-i18n="nav.contact">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__controls">
+        <button class="lang-toggle" id="langToggle" aria-label="Переключить язык">
+          <span class="lang-toggle__label">RU</span>
+          <span class="lang-toggle__divider">/</span>
+          <span class="lang-toggle__label">EN</span>
+        </button>
+
+        <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button class="burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <nav aria-label="Мобильная навигация">
+        <ul class="mobile-menu__list">
+          <li><a href="#about" class="mobile-menu__link" data-i18n="nav.about">Обо мне</a></li>
+          <li><a href="#skills" class="mobile-menu__link" data-i18n="nav.skills">Навыки</a></li>
+          <li><a href="#projects" class="mobile-menu__link" data-i18n="nav.projects">Проекты</a></li>
+          <li><a href="#experience" class="mobile-menu__link" data-i18n="nav.experience">Опыт</a></li>
+          <li><a href="#contact" class="mobile-menu__link" data-i18n="nav.contact">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero__bg-pattern"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="hero__greeting" data-i18n="hero.greeting">Привет, меня зовут</p>
+          <h1 class="hero__name">Юрий</h1>
+          <p class="hero__role">
+            <span class="typewriter" id="typewriter"></span><span class="typewriter__cursor">|</span>
+          </p>
+          <p class="hero__bio" data-i18n="hero.bio">Начинающий frontend-разработчик. Перегоняю макеты из Figma в код. Люблю чистый CSS, простой дизайн и хороший кофе.</p>
+          <div class="hero__actions">
+            <a href="#" class="btn btn--primary" id="downloadResume" data-i18n="hero.download">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Скачать резюме
+            </a>
+            <a href="#contact" class="btn btn--ghost" data-i18n="hero.contact">
+              Связаться
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll-hint">
+        <a href="#about" aria-label="Прокрутить вниз">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <polyline points="19 12 12 19 5 12"></polyline>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-header__label" data-i18n="about.label">01</span>
+          <h2 class="section-header__title" data-i18n="about.title">Обо мне</h2>
+        </header>
+        <div class="about__grid">
+          <div class="about__text scroll-reveal">
+            <p data-i18n="about.p1">Меня зовут Юрий Ковальчук, мне 17 лет. Живу в России, учусь на программиста и параллельно изучаю frontend-разработку. На данный момент специализируюсь на вёрстке сайтов по готовым макетам.</p>
+            <p data-i18n="about.p2">Беру макеты из Figma, Tilda, Adobe XD — перегоняю их в чистый HTML и CSS. Умею работать с адаптивностью и стараюсь писать код, который легко читать и поддерживать.</p>
+            <p data-i18n="about.p3">Ищу возможность делать реальные проекты и набираться опыта. Готов помочь с вёрсткой для вашего сайта — от простого лендинга до небольшого интернет-магазина.</p>
+            <ul class="about__facts">
+              <li class="about__fact scroll-reveal">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <span data-i18n="about.fact1">Вёрстка по макетам Figma, Tilda, Adobe XD</span>
+              </li>
+              <li class="about__fact scroll-reveal">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <span data-i18n="about.fact2">Адаптивная вёрстка (мобильные, планшеты, десктоп)</span>
+              </li>
+              <li class="about__fact scroll-reveal">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <span data-i18n="about.fact3">Английский — читаю документацию и статьи</span>
+              </li>
+            </ul>
+          </div>
+          <div class="about__image scroll-reveal">
+            <div class="about__image-frame">
+              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=600&fit=crop&q=80"
+                   alt="Рабочее место разработчика"
+                   width="500"
+                   height="600"
+                   loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills section" id="skills">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-header__label" data-i18n="skills.label">02</span>
+          <h2 class="section-header__title" data-i18n="skills.title">Навыки</h2>
+          <p class="section-header__desc" data-i18n="skills.desc">Что я умею и что постоянно изучаю</p>
+        </header>
+        <div class="skills__grid">
+          <div class="skill-card scroll-reveal" data-skill="90">
+            <div class="skill-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+              </svg>
+            </div>
+            <div class="skill-card__info">
+              <span class="skill-card__name">HTML</span>
+              <span class="skill-card__level">90%</span>
+            </div>
+            <div class="skill-card__bar">
+              <div class="skill-card__bar-fill" data-width="90"></div>
+            </div>
+          </div>
+
+          <div class="skill-card scroll-reveal" data-skill="85">
+            <div class="skill-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <div class="skill-card__info">
+              <span class="skill-card__name">CSS</span>
+              <span class="skill-card__level">85%</span>
+            </div>
+            <div class="skill-card__bar">
+              <div class="skill-card__bar-fill" data-width="85"></div>
+            </div>
+          </div>
+
+          <div class="skill-card scroll-reveal" data-skill="60">
+            <div class="skill-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+                <line x1="16" y1="8" x2="2" y2="22"></line>
+                <line x1="17.5" y1="15" x2="9" y2="15"></line>
+              </svg>
+            </div>
+            <div class="skill-card__info">
+              <span class="skill-card__name">JavaScript</span>
+              <span class="skill-card__level">60%</span>
+            </div>
+            <div class="skill-card__bar">
+              <div class="skill-card__bar-fill" data-width="60"></div>
+            </div>
+          </div>
+
+          <div class="skill-card scroll-reveal" data-skill="50">
+            <div class="skill-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="2"></circle>
+                <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+              </svg>
+            </div>
+            <div class="skill-card__info">
+              <span class="skill-card__name">React</span>
+              <span class="skill-card__level">50%</span>
+            </div>
+            <div class="skill-card__bar">
+              <div class="skill-card__bar-fill" data-width="50"></div>
+            </div>
+          </div>
+
+          <div class="skill-card scroll-reveal" data-skill="65">
+            <div class="skill-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="4"></circle>
+                <line x1="1.05" y1="12" x2="7" y2="12"></line>
+                <line x1="17.01" y1="12" x2="22.96" y2="12"></line>
+              </svg>
+            </div>
+            <div class="skill-card__info">
+              <span class="skill-card__name">Figma</span>
+              <span class="skill-card__level">65%</span>
+            </div>
+            <div class="skill-card__bar">
+              <div class="skill-card__bar-fill" data-width="65"></div>
+            </div>
+          </div>
+
+          <div class="skill-card scroll-reveal" data-skill="55">
+            <div class="skill-card__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="3" y1="9" x2="21" y2="9"></line>
+                <line x1="9" y1="21" x2="9" y2="9"></line>
+              </svg>
+            </div>
+            <div class="skill-card__info">
+              <span class="skill-card__name">Git</span>
+              <span class="skill-card__level">55%</span>
+            </div>
+            <div class="skill-card__bar">
+              <div class="skill-card__bar-fill" data-width="55"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects section" id="projects">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-header__label" data-i18n="projects.label">03</span>
+          <h2 class="section-header__title" data-i18n="projects.title">Проекты</h2>
+          <p class="section-header__desc" data-i18n="projects.desc">Моя первая работа — пока одна, но зато своя</p>
+        </header>
+
+        <div class="projects__filters scroll-reveal">
+          <button class="filter-btn filter-btn--active" data-filter="all" data-i18n="projects.filter.all">Все</button>
+        </div>
+
+        <div class="projects__grid">
+          <article class="project-card scroll-reveal" data-category="web">
+            <div class="project-card__image">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&q=80"
+                   alt="Скриншот проекта"
+                   width="600"
+                   height="400"
+                   loading="lazy">
+              <div class="project-card__overlay">
+                <a href="https://github.com/Ghostik-afk/website" target="_blank" rel="noopener noreferrer" class="project-card__btn" aria-label="Посмотреть на GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  GitHub
+                </a>
+                <a href="https://ghostik-afk.github.io/website/" target="_blank" rel="noopener noreferrer" class="project-card__btn" aria-label="Посмотреть демо">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                  Demo
+                </a>
+              </div>
+            </div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">Мой первый сайт</h3>
+              <p class="project-card__desc" data-i18n="projects.first.desc">Вёрстка лендинга по макету из Figma. Адаптивность, hover-эффекты, чистый CSS.</p>
+              <div class="project-card__tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">Figma</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card scroll-reveal" data-category="web">
+            <div class="project-card__image">
+              <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&h=400&fit=crop&q=80"
+                   alt="Скриншот portfolio проекта"
+                   width="600"
+                   height="400"
+                   loading="lazy">
+              <div class="project-card__overlay">
+                <a href="https://github.com/Ghostik-afk/foodsite" target="_blank" rel="noopener noreferrer" class="project-card__btn" aria-label="Посмотреть на GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  GitHub
+                </a>
+                <a href="https://ghostik-afk.github.io/foodsite/" target="_blank" rel="noopener noreferrer" class="project-card__btn" aria-label="Посмотреть демо">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                  Demo
+                </a>
+              </div>
+            </div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">foodsite</h3>
+              <p class="project-card__desc" data-i18n="projects.first.desc">Вёрстка лендинга по макету из Figma. Адаптивность, hover-эффекты, чистый CSS.</p>
+              <div class="project-card__tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card scroll-reveal" data-category="web">
+            <div class="project-card__image">
+              <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop&q=80"
+                   alt="Скриншот проекта Calculator"
+                   width="600"
+                   height="400"
+                   loading="lazy">
+              <div class="project-card__overlay">
+                <a href="https://github.com/Ghostik-afk/calculator" target="_blank" rel="noopener noreferrer" class="project-card__btn" aria-label="Посмотреть на GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  GitHub
+                </a>
+                <a href="https://ghostik-afk.github.io/calculator/" target="_blank" rel="noopener noreferrer" class="project-card__btn" aria-label="Посмотреть демо">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                  Demo
+                </a>
+              </div>
+            </div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">Calculator</h3>
+              <p class="project-card__desc">Калькулятор на JavaScript. Все базовые операции, чистый интерфейс.</p>
+              <div class="project-card__tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience section" id="experience">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-header__label" data-i18n="experience.label">04</span>
+          <h2 class="section-header__title" data-i18n="experience.title">Опыт</h2>
+          <p class="section-header__desc" data-i18n="experience.desc">Чем я занимаюсь</p>
+        </header>
+
+        <div class="timeline">
+          <div class="timeline__line"></div>
+
+          <div class="timeline__item scroll-reveal">
+            <div class="timeline__date">
+              <span>2024 — <span data-i18n="experience.present">наст. время</span></span>
+            </div>
+            <div class="timeline__content">
+              <h3 class="timeline__title" data-i18n="experience.job1.title">Изучаю frontend-разработку</h3>
+              <p class="timeline__company">Самостоятельно + колледж</p>
+              <p class="timeline__desc" data-i18n="experience.job1.desc">HTML, CSS, JavaScript — каждый день пишу код и разбираюсь в деталях. Параллельно учусь в колледже на программиста.</p>
+            </div>
+          </div>
+
+          <div class="timeline__item scroll-reveal">
+            <div class="timeline__date">
+              <span>2023</span>
+            </div>
+            <div class="timeline__content">
+              <h3 class="timeline__title" data-i18n="experience.job2.title">Начал изучать программирование</h3>
+              <p class="timeline__company">Школа</p>
+              <p class="timeline__desc" data-i18n="experience.job2.desc">Первые шаги в IT. Начал с Python, потом перешёл на веб-разработку и понял, что это моё.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-header__label" data-i18n="contact.label">05</span>
+          <h2 class="section-header__title" data-i18n="contact.title">Контакты</h2>
+          <p class="section-header__desc" data-i18n="contact.desc">Напиши мне — отвечу в течение дня</p>
+        </header>
+
+        <div class="contact__grid">
+          <form class="contact-form scroll-reveal" id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="name" class="form-label" data-i18n="contact.form.name">Имя</label>
+              <input type="text"
+                     id="name"
+                     name="name"
+                     class="form-input"
+                     placeholder="Ваше имя"
+                     required
+                     minlength="2">
+              <span class="form-error" id="nameError" data-i18n="contact.form.nameError">Имя должно содержать минимум 2 символа</span>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label" data-i18n="contact.form.email">Email</label>
+              <input type="email"
+                     id="email"
+                     name="email"
+                     class="form-input"
+                     placeholder="your@email.com"
+                     required>
+              <span class="form-error" id="emailError" data-i18n="contact.form.emailError">Введите корректный email</span>
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label" data-i18n="contact.form.message">Сообщение</label>
+              <textarea id="message"
+                        name="message"
+                        class="form-input form-textarea"
+                        placeholder="Опишите задачу..."
+                        required
+                        minlength="10"
+                        rows="5"></textarea>
+              <span class="form-error" id="messageError" data-i18n="contact.form.messageError">Сообщение должно содержать минимум 10 символов</span>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
+              <span class="btn__text" data-i18n="contact.form.submit">Отправить</span>
+              <span class="btn__loader">
+                <svg class="spinner" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle>
+                  <path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"></path>
+                </svg>
+              </span>
+            </button>
+          </form>
+
+          <aside class="contact-info scroll-reveal">
+            <p class="contact-info__text" data-i18n="contact.info.text">Если вам нужна вёрстка сайта по макету — напишите. Рассмотрю любой проект, от простого лендинга до чего-то посерьёзнее.</p>
+
+            <div class="contact-info__links">
+              <a href="mailto:yuri.kovalchuk@example.com" class="contact-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                yuri@gmail.com
+              </a>
+              <a href="https://t.me/yuri_kovalchuk" target="_blank" rel="noopener noreferrer" class="contact-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.62.295-.002.003-.003.005-.004.008l.71-2.673 4.133-3.727c.181-.157-.04-.246-.28-.088l-5.19 3.28-2.35-1.376c-.418-.258-.427-.418-.09-.602l11.573-4.458c.337-.132.558-.126.68.152.12.28.247.555.37.832l.55 2.073c.105.39.402.492.64.243l2.005-1.938z"/>
+                </svg>
+                @yuri
+              </a>
+              <a href="https://github.com/yuri-kovalchuk" target="_blank" rel="noopener noreferrer" class="contact-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                github.com/yuri
+              </a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">&copy; 2026 Юрий</p>
+      <div class="footer__links">
+        <a href="https://github.com/yuri-kovalchuk" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
+        </a>
+        <a href="https://t.me/yuri_kovalchuk" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.62.295-.002.003-.003.005-.004.008l.71-2.673 4.133-3.727c.181-.157-.04-.246-.28-.088l-5.19 3.28-2.35-1.376c-.418-.258-.427-.418-.09-.602l11.573-4.458c.337-.132.558-.126.68.152.12.28.247.555.37.832l.55 2.073c.105.39.402.492.64.243l2.005-1.938z"/>
+          </svg>
+        </a>
+      </div>
+      <button class="footer__scroll-top" id="scrollTop" aria-label="Наверх">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="19" x2="12" y2="5"></line>
+          <polyline points="5 12 12 5 19 12"></polyline>
+        </svg>
+      </button>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="alert" aria-live="polite">
+    <svg class="toast__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+    </svg>
+    <span class="toast__message" data-i18n="toast.success">Спасибо! Я свяжусь с вами в ближайшее время.</span>
+    <button class="toast__close" id="toastClose" aria-label="Закрыть">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
